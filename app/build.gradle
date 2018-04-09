@@ -11,4 +11,24 @@ android {
     versionCode 1
     versionName '1.0.0'
   }
+
+    signingConfigs {
+     release {
+            keyAlias 'cimbrtbmobile'
+            storeFile file('.keystore')
+            keyPassword '89c1mbM0b1l3'
+            storePassword '89c1mbM0b1l3'
+        }
+    }
+
+     buildTypes {
+      
+        release {
+            debuggable false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+
+    }
+
 }
